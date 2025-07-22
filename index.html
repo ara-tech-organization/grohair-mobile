@@ -244,10 +244,14 @@
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 8px;
-  border-radius: 10px;
-  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
+
+.slide {
+  scroll-snap-align: center;
+  flex: 0 0 100%;
+}
+
 
 .carousel-images label {
   scroll-snap-align: center;
@@ -288,10 +292,16 @@ input[name="carousel"] {
 /* Active dot color */
 #slide1:checked ~ .dots label[for="slide1"],
 #slide2:checked ~ .dots label[for="slide2"],
-#slide3:checked ~ .dots label[for="slide3"] {
+#slide3:checked ~ .dots label[for="slide3"],
+#slide4:checked ~ .dots label[for="slide4"]  {
   background: linear-gradient(to right, #FF6200, #BE0000);
 }
 
+#slide1:checked ~ .carousel-images label:nth-child(1),
+#slide2:checked ~ .carousel-images label:nth-child(2),
+#slide3:checked ~ .carousel-images label:nth-child(3) {
+  display: block;
+}
 
 /* .wrapper {
   text-align: center;
@@ -378,30 +388,53 @@ input[name="carousel"] {
     <input type="radio" name="carousel" id="slide1" checked>
     <input type="radio" name="carousel" id="slide2">
     <input type="radio" name="carousel" id="slide3">
+    <input type="radio" name="carousel" id="slide4">
 
     <div class="carousel-images">
-      <label for="slide1">
-        <img src="images/before-after-8.webp" alt="Slide 1" />
-      </label>
-      <label for="slide2">
-        <img src="images/before-after-2.webp" alt="Slide 2" />
-      </label>
-      <label for="slide3">
-        <img src="images/before-after-3.webp" alt="Slide 3" />
-      </label>
-       <label for="slide3">
-        <img src="images/before-after-7.webp" alt="Slide 3" />
-      </label>
-    </div>
+  <div class="slide"><img src="images/before-after-8.webp" alt="Slide 1" /></div>
+  <div class="slide"><img src="images/before-after-2.webp" alt="Slide 2" /></div>
+  <div class="slide"><img src="images/before-after-3.webp" alt="Slide 3" /></div>
+  <div class="slide"><img src="images/before-after-7.webp" alt="Slide 4" /></div>
+</div>
 
     <div class="dots">
       <label for="slide1" class="dot"></label>
       <label for="slide2" class="dot"></label>
       <label for="slide3" class="dot"></label>
+       <label for="slide4" class="dot"></label>
     </div>
   </div>
 </div>
 
   </div>
+
+  <script>
+  const radios = document.querySelectorAll('input[name="carousel"]');
+  const track = document.querySelector('.carousel-images');
+
+  function scrollToSlide(index) {
+    const slide = track.children[index];
+    if (!slide) return;
+    track.scrollTo({
+      left: slide.offsetLeft,
+      behavior: 'smooth'
+    });
+  }
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener('change', () => {
+      scrollToSlide(index);
+    });
+  });
+
+  // Optional: Auto-scroll every 5 seconds
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % radios.length;
+    radios[current].checked = true;
+    scrollToSlide(current);
+  }, 5000);
+</script>
+
 </body>
 </html>
