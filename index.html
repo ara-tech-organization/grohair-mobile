@@ -479,25 +479,28 @@
     });
   });
 
-  // 👇 Detect which slide is visible on scroll
+  let debounceTimer;
   track.addEventListener("scroll", () => {
-    const scrollLeft = track.scrollLeft;
-    const slideWidth = slides[0].offsetWidth;
-    const index = Math.round(scrollLeft / slideWidth);
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const scrollLeft = track.scrollLeft;
+      const slideWidth = slides[0].offsetWidth;
+      const index = Math.round(scrollLeft / slideWidth);
 
-    if (radios[index]) {
-      radios[index].checked = true;
-    }
+      if (radios[index] && !radios[index].checked) {
+        radios[index].checked = true;
+      }
+    }, 100); // Slight delay for smoother detection
   });
 
-  // Optional: Auto-scroll every 5 seconds
+  // 💫 Auto-scroll using change event
   let current = 0;
   setInterval(() => {
     current = (current + 1) % radios.length;
-    radios[current].checked = true;
-    scrollToSlide(current);
+    radios[current].click(); // triggers scroll + dot update
   }, 5000);
 </script>
+
 
   </body>
 </html>
