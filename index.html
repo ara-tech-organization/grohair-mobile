@@ -24,9 +24,15 @@
       body {
         margin: 0;
         font-family: "Poppins", sans-serif;
-        background: url("/images/bg.png") no-repeat center center fixed;
+        background: url("images/bg.png") no-repeat center center fixed;
         background-size: cover;
         overflow-x: hidden;
+         z-index: 0;
+         background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional if you want it to stay still */
+  height: 100vh;
       }
 
       @media (min-width: 768px) {
@@ -38,7 +44,7 @@
       .mobile-only {
         max-width: 430px;
         margin: auto;
-        background-color: white;
+        background-color: transparent;
         padding: 16px;
       }
 
