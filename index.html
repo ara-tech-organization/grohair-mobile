@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hair Transplant Promo</title>
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-only {
+        display: none;
+      }
+    }
+
+    .mobile-only {
+      max-width: 430px;
+      margin: auto;
+      background-color: white;
+      padding: 16px;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .header img {
+      width: 100px;
+      height: auto;
+    }
+
+    .address {
+      font-size: 12px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .highlight-text {
+      font-weight: 600;
+      color: #FF0000;
+      margin: 30px 0 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .bullet-section {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 auto 16px;
+      width: max-content;
+      text-align: left;
+    }
+
+    .bullet-section li {
+      position: relative;
+      padding-left: 12px;
+      font-size: 12px;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .bullet-section li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #000;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .bullet-section.two-column {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .bullet-section.two-column li {
+      flex: 1 0 auto;
+      margin-bottom: 0;
+    }
+
+    .call-now {
+      text-align: center;
+      color: #FF6200;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px 5px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .call {
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  padding: 10px 5px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(
+    120deg,
+    #005c99 0%,
+    #0078B8 20%,
+    #00cfff 40%,
+    #0078B8 60%,
+    #005c99 80%,
+    #009EF2 100%
+  );
+  background-size: 300% 300%;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: metallicShimmer 8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.call:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.6);
+}
+
+.call i {
+  margin-right: 8px;
+}
+
+@keyframes metallicShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.btn.whatsapp {
+  position: relative;
+  display: inline-block;
+  padding: 10px 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+  background: linear-gradient(
+    115deg,
+    #1C8100 10%,
+    #27B500 40%,
+    #1C8100 60%,
+    #27B500 90%
+  );
+  background-size: 300% 300%;
+  animation: metallicSwipeWhats 6s linear infinite;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes metallicSwipeWhats {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .before-after {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .before-after img {
+      width: 48%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .icon {
+  color: #fff; /* or any contrasting color */
+  font-size: 18px;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-images {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 8px;
+  border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-images label {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Radio buttons (hidden) */
+input[name="carousel"] {
+  display: none;
+}
+
+/* Active dot color */
+#slide1:checked ~ .dots label[for="slide1"],
+#slide2:checked ~ .dots label[for="slide2"],
+#slide3:checked ~ .dots label[for="slide3"] {
+  background: linear-gradient(to right, #FF6200, #BE0000);
+}
+
+
+/* .wrapper {
+  text-align: center;
+}
+
+.rainbow-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  background: linear-gradient(270deg,
+    red, orange, yellow, green, cyan, blue, violet, red);
+  background-size: 600% 600%;
+  animation: rainbowMove 5s ease infinite;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.rainbow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+  </style>
+</head>
+<body>
+  <div class="mobile-only">
+    <div class="header">
+      <img src="images/logo.png" alt="Grohair & Gloskin Logo" />
+      <div class="address">
+        2nd Floor, Asha Arcade,<br />
+        No.73, next to Tabs Complex,<br />
+        Opp. to Child Jesus Hospital,<br />
+        Cantonment, Tiruchirappalli
+      </div>
+    </div>
+
+    <div class="highlight-text">
+      Get more details about <span style="color: #BA0000;">Hair Transplants?</span>
+    </div>
+
+    <ul class="bullet-section">
+      <li>Treatment Procedure & Duration</li>
+    </ul>
+    <ul class="bullet-section two-column">
+      <li>Available Treatment Types</li>
+      <li>Treatment Cost</li>
+    </ul>
+
+    <div class="call-now">
+      Call or WhatsApp Now for all the info you need!
+    </div>
+
+     <!-- <div class="wrapper">
+    <button class="rainbow-button">
+      Press ♥ to Continue
+    </button>
+  </div> -->
+
+    <a href="tel:+919876543210" class="btn call">
+     <i class="fa-solid fa-phone"></i>Call
+    </a>
+    <a href="https://wa.me/918605156789" class="btn whatsapp">
+      <i class="fab fa-whatsapp icon"></i>Whatsapp
+    </a>
+
+    <div class="carousel-wrapper">
+  <div class="carousel-track" id="carousel-track">
+    <input type="radio" name="carousel" id="slide1" checked>
+    <input type="radio" name="carousel" id="slide2">
+    <input type="radio" name="carousel" id="slide3">
+
+    <div class="carousel-images">
+      <label for="slide1">
+        <img src="images/before-after-8.webp" alt="Slide 1" />
+      </label>
+      <label for="slide2">
+        <img src="images/before-after-2.webp" alt="Slide 2" />
+      </label>
+      <label for="slide3">
+        <img src="images/before-after-3.webp" alt="Slide 3" />
+      </label>
+       <label for="slide3">
+        <img src="images/before-after-7.webp" alt="Slide 3" />
+      </label>
+    </div>
+
+    <div class="dots">
+      <label for="slide1" class="dot"></label>
+      <label for="slide2" class="dot"></label>
+      <label for="slide3" class="dot"></label>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>
