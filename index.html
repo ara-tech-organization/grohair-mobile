@@ -41,24 +41,29 @@
         }
       }
 
-      .mobile-only {
-        max-width: 430px;
-        margin: auto;
-        background-color: transparent;
-        padding: 16px;
-      }
+     .mobile-only {
+  max-width: 430px;
+  margin: auto;
+  background-color: transparent;
+  padding: 80px 16px 16px; /* leave top padding to account for header height */
+}
 
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        /* margin-bottom: 12px; */
-        background-color: white;
-        /* padding: 10px; */
-        /* border-radius: 10px; */
-        /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-      }
+
+     .header {
+  position: fixed; /* keep it always on top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 75px; /* adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
 
       .header img {
         width: 100px;
@@ -104,8 +109,9 @@
         position: relative;
         padding-left: 12px;
         font-size: 12px;
-        color: #333;
+        color: #000000;
         margin-bottom: 8px;
+        font-weight: bold;
       }
 
       .bullet-section li::before {
@@ -399,7 +405,7 @@
 
       <div class="highlight-text">
         Get more details about
-        <span style="color: #ba0000">Hair Transplants?</span>
+        <span>Hair Transplants?</span>
       </div>
 
       <ul class="bullet-section">
