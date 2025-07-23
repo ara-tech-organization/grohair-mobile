@@ -93,46 +93,36 @@
         font-weight: 600;
         color: #ff0000;
         margin: 30px 0 10px;
-        font-size: 16px;
+        font-size: 20px;
         text-align: center;
       }
 
-      .bullet-section {
-        list-style-type: none;
-        padding: 0;
-        margin: 0 auto 16px;
-        width: max-content;
-        text-align: left;
-      }
+.bullet-section {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 16px;
+  width: fit-content;
+  text-align: center;
+}
 
-      .bullet-section li {
-        position: relative;
-        padding-left: 12px;
-        font-size: 12px;
-        color: #000000;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
+.bullet-section li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12px;
+}
 
-      .bullet-section li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: #000;
-        font-size: 15px;
-        line-height: 1.2;
-      }
+.bullet-section li i {
+  color: #ff6200; /* Orange accent for the icon */
+  font-size: 16px;
+}
 
-      .bullet-section.two-column {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-      }
 
-      .bullet-section.two-column li {
-        flex: 1 0 auto;
-        margin-bottom: 0;
-      }
+
 
       .call-now {
         text-align: center;
@@ -402,15 +392,16 @@
       </div>
 
       <div class="highlight-text">
-        Get more details about
+        Get more details about <br>
         <span>Hair Transplants?</span>
       </div>
 
-      <ul class="bullet-section">
-        <li>Treatment Procedure & Duration</li>
-         <li>Available Treatment Types</li>
-        <li>Treatment Cost</li>
-      </ul>
+     <ul class="bullet-section">
+  <li><i class="fa-solid fa-question"></i> Treatment Procedure & Duration</li>
+  <li><i class="fa-solid fa-question"></i> Available Treatment Types</li>
+  <li><i class="fa-solid fa-question"></i> Treatment Cost</li>
+</ul>
+
       <!-- <ul class="bullet-section ">
 
       </ul> -->
